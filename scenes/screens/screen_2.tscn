@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://djn8qkrcuewt4"]
+
+[ext_resource type="PackedScene" uid="uid://dfrl38avsfkbg" path="res://scenes/screen.tscn" id="1_bjmwq"]
+
+[node name="Screen" node_paths=PackedStringArray("buttons") instance=ExtResource("1_bjmwq")]
+buttons = [NodePath("Button")]
+screen_names = Array[StringName]([&"main"])
+
+[node name="Button" type="Button" parent="." index="0"]
+layout_mode = 0
+offset_left = 470.0
+offset_top = 225.0
+offset_right = 515.0
+offset_bottom = 256.0
+text = "back"

@@ -1,10 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqik7l3pkwh1x"]
+[gd_scene load_steps=3 format=3 uid="uid://dqik7l3pkwh1x"]
 
 [ext_resource type="PackedScene" uid="uid://dfrl38avsfkbg" path="res://scenes/screen.tscn" id="1_vpwhe"]
+[ext_resource type="Script" path="res://scripts/screen_switch_button.gd" id="2_hpy1j"]
 
-[node name="Screen" node_paths=PackedStringArray("buttons") instance=ExtResource("1_vpwhe")]
-buttons = [NodePath("Button"), NodePath("Button2")]
-screen_names = Array[StringName]([&"screen_1", &"screen_2"])
+[node name="Screen" instance=ExtResource("1_vpwhe")]
 
 [node name="Button" type="Button" parent="." index="0"]
 layout_mode = 0
@@ -13,6 +12,8 @@ offset_top = 316.0
 offset_right = 407.0
 offset_bottom = 360.0
 text = "1"
+script = ExtResource("2_hpy1j")
+screen = "res://scenes/screens/screen_1.tscn"
 
 [node name="Button2" type="Button" parent="." index="1"]
 layout_mode = 0
@@ -22,3 +23,5 @@ offset_right = 598.0
 offset_bottom = 365.0
 text = "2
 "
+script = ExtResource("2_hpy1j")
+screen = "res://scenes/screens/screen_2.tscn"

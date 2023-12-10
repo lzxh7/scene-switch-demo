@@ -1,9 +1,8 @@
 class_name Main
 extends Node
 
-@export var screen: Screen
+@export var screen: Node
 @export var screen_scenes: Array[PackedScene]
-@export var screen_names: Array[StringName]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,7 +13,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func set_screen(screen_name: StringName) -> void:
+func set_screen(screen_scene: PackedScene) -> void:
 	screen.queue_free()
-	screen = screen_scenes[screen_names.find(screen_name)].instantiate()
+	screen = screen_scene.instantiate()
 	add_child(screen)
